@@ -1,0 +1,16 @@
+<h1>StaticPages#surprise</h1>
+
+<% @size.each do |number| %>
+	<%= p "*" * number %>
+	<br/>
+<% end %>
+
+<% @size.reverse! %>
+<% counter = @size.count %>
+<% @size.each do |number| %>
+	<% line = "*" *(2*number-1) %>
+	<% spaces = " " *(@size.count - counter ) %>
+	<% counter -= 1 %>
+  <pre><%= p (spaces + line) %></pre>
+	<br/>
+<% end %>
